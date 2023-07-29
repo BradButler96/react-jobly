@@ -16,6 +16,11 @@ test("not found for site 404 (test stack print)", async function () {
   delete process.env.NODE_ENV;
 });
 
+test('connect', async function () {
+  const resp = await request(app).get("/");
+  console.log(resp)
+})
+
 afterAll(function () {
   db.end();
 });
